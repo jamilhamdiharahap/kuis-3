@@ -1,24 +1,19 @@
-
+import ReactDOM from 'react-dom/client'
 
 const Welcome = (props) => {
     return ( 
-        {!props.nama ? <h1>selamat datang {props.nama}</h1> : <Home/>}
+        <h1>Selamat datang {props.nama}</h1>
      );
 }
 
 const Home = () => {
-    return ( 
-        <button>login</button>
-     );
+    if(!nama){
+        return <button>login</button>
+    }
+    
 }
- 
- 
-export default Welcome;
 
-const element = createRenderer(document.querySelector('#root'))
-
-element.render(
-    <Welcome nama= "jamil"/>
+ReactDOM.createRoot(document.querySelector('#root')).render(
+    <Welcome nama="jamil"/>
 )
-
 

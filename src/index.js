@@ -6,14 +6,17 @@ const Welcome = (props) => {
      );
 }
 
+let nama;
+
 const Home = () => {
     if(!nama){
         return <button>login</button>
+    }else{
+        return <Welcome />
     }
     
 }
 
-ReactDOM.createRoot(document.querySelector('#root')).render(
-    <Welcome nama="jamil"/>
-)
+const elementRoot = ReactDOM.createRoot(document.querySelector('#root'))
+elementRoot.render(<Welcome nama="jamil"/>);
 
